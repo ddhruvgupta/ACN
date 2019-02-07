@@ -7,6 +7,7 @@ import sys
 import _thread
 import json
 from pprint import pprint
+import router_send
 
 port = 5100;
 
@@ -14,7 +15,7 @@ port = 5100;
 def handle(client_socket, address):
     counter = 1;
     results = dict();
-    val = client_socket.recv(4800).decode()
+    val = client_socket.recv(48000).decode()
     # print(val)
 
     # store results
@@ -41,18 +42,42 @@ def handle(client_socket, address):
         print(i)
         pprint(results[i])
 
-    last = -1
+    last = 0
     # Loop
     for i in list(results):
-        if(i != last+1):   # Check results
-            router_send.NAK(last);
+        if int(i)-last > 1:   # Check results            
+            data = {'NAK': last+1}
+            val = json.dumps(data)
+            data_encode = val.encode()
+            client_socket.send(data_encode)
+            
+            val = client_socket.recv(4800)
+            val_json = json.loads(val.decode())
+
+            print()
+            print("Inserting dropped packet...")
+            pprint(val_json)
+
+            results.update({str(last+1):val_json})
+            last+=1;
         else:
             last+=1;    
         # Request Missing Packets
 
-
+        print("final data: ")
+        for i in list(results):
+            pprint(results[i])
     #client_socket.send(capitalizedSentence.encode())
+
+    
+    router_send.send(results)
+
     print('closing connection with: '+ str(address))
+
+    data = {'fin': 0}
+    val = json.dumps(data)
+    data_encode = val.encode()
+    client_socket.send(data_encode)
     client_socket.close()
 
 serverSocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM);

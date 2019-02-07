@@ -12,7 +12,8 @@ import json
 
 messages = dict();
 
-sentence = "clever fox hopped the wall";
+# sentence = "clever fox hopped the wall";
+sentence = "clever fox hopped the wall clever fox hopped the wall clever fox hopped the wall clever fox hopped the wall clever fox hopped the wall clever fox hopped the wall";
 counter = 1
 
 messages.update(

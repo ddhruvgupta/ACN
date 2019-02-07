@@ -5,15 +5,15 @@
 
 import json
 import socket
+from pprint import pprint
 
-def NAK(pak):
+def send(data):
 
 	serverName = 'localhost'
-	serverPort = 5100;
+	serverPort = 5200;
 	clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	clientSocket.connect((serverName,serverPort))
 
-	data = {'NAK': pak}
 	val = json.dumps(data)
 	data_encode = val.encode()
 	clientSocket.send(data_encode)

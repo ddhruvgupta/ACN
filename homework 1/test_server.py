@@ -8,13 +8,13 @@ import _thread
 import json
 from pprint import pprint
     
-port = 5100;
+port = 5200;
 
 
 def handle(client_socket, address):
     counter = 1;
     results = dict();
-    val = client_socket.recv(4800).decode()
+    val = client_socket.recv(48000).decode()
     # print(val)
 
     # store results
