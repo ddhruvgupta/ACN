@@ -15,7 +15,7 @@ port = 5100;
 def handle(client_socket, address):
     counter = 1;
     results = dict();
-    val = client_socket.recv(48000).decode()
+    val = client_socket.recv(100000).decode()
     # print(val)
 
     # store results
@@ -59,14 +59,14 @@ def handle(client_socket, address):
             pprint(val_json)
 
             results.update({str(last+1):val_json})
-            last+=1;
+            last+=2;
         else:
             last+=1;    
         # Request Missing Packets
 
-        print("final data: ")
-        for i in list(results):
-            pprint(results[i])
+    print("final data: ")
+    for i in list(results):
+        pprint(results[i])
     #client_socket.send(capitalizedSentence.encode())
 
     

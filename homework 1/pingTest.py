@@ -13,46 +13,25 @@ import json
 messages = dict();
 
 # sentence = "clever fox hopped the wall";
-sentence = "clever fox hopped the wall clever fox hopped the wall clever fox hopped the wall clever fox hopped the wall clever fox hopped the wall clever fox hopped the wall";
+sentence= ''
+for i in range(1,500):
+	sentence+='a'
+
 counter = 1
 
-messages.update(
-		{
-		counter:{
-		'sno':counter,
-		'data':'SYN',
-		'source':'A',
-		'destination':'C',
-		'ACK':1
-		}
-		});
-
-counter+=1;
 
 for i in sentence:
 	messages.update(
 		{
 		counter:{
 		'sno':counter,
-		'data':i,
-		'source':'A',
-		'destination':'C',
-		'ACK':1
+		'data':i		
 		}
 		});
 
 	counter+=1;
 
-messages.update(
-		{
-		counter:{
-		'sno':counter,
-		'data':'FIN',
-		'source':'A',
-		'destination':'C',
-		'ACK':1
-		}
-		});	
+
 # messages.update({2:{2:'b'}});
 # messages.update({3:{3:'c'}});
 # messages.update({4:{4:'d'}});

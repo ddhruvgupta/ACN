@@ -21,7 +21,7 @@ def send(data):
 	print("data sent")
 
 	while(True):
-		response = clientSocket.recv(1024)
+		response = clientSocket.recv(20000)
 		ans = response.decode()
 		# print("ans=" )
 		pprint(ans)
