@@ -7,7 +7,7 @@ import sys
 import _thread
 import json
 from pprint import pprint
-    
+
 port = 5100;
 
 
@@ -21,10 +21,33 @@ def handle(client_socket, address):
     results = json.loads(val)
     
     print('Recieved: ')
-    pprint(results)
+    for i in results:
+        pprint(results[i])
 
-    # Loop   
-        # Check results
+    # Packet Dropper code
+
+    # random between 1 and length of message 
+    # drop = 120 - random
+    drop = 120
+    for i in list(results):
+        if (drop % 125 == 0):
+            results.pop(i)
+            print("Packet "+i+" dropped")
+        drop+=1    
+
+    print('After dropping packet: ')
+    
+    for i in list(results):
+        print(i)
+        pprint(results[i])
+
+    last = -1
+    # Loop
+    for i in list(results):
+        if(i != last+1):   # Check results
+            router_send.NAK(last);
+        else:
+            last+=1;    
         # Request Missing Packets
 
 
