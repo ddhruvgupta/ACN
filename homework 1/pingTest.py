@@ -14,7 +14,8 @@ messages = dict();
 
 # sentence = "clever fox hopped the wall";
 sentence= ''
-for i in range(1,500):
+
+for i in range(1,1000):
 	sentence+='a'
 
 counter = 1
