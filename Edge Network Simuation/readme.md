@@ -72,9 +72,8 @@ The two parts of the algorithm:
 Dispatching Policy: According to this policy the jobs are dispatched to the server which brings least increase to Weighted Response Time (WRT), i.e., dispatch the jobs greedily to server with minimum total Weighted Response Time (WRT).
 
 <img src="images/2.png" />
+
 Figure 2: Shows Type I and Type II jobs and ‘job’ is the job to be dispatched
-
-
 
 Weighted Response Time=
 Time to process packets of higher Priority (Type I jobs) + Time to process job + Time to Process Low Priority jobs (Type II jobs)
@@ -115,7 +114,6 @@ This approach to the simulation would add some delay in the packet being queued 
 
 <img src="images/3.png" />
 Figure 3. Shows low priority packets very high processing times in the queue, in ‘On Disc’ Scheduling Algorithm
-
 
 If high priority jobs keep coming in the low priority jobs may have to wait infinitely in the queue.
 
