@@ -188,16 +188,26 @@ In ‘On Disc’ paper [2] we studied the online job dispatching and scheduling 
 References
 
 [1] B.-G. Chun, S. Ihm, P. Maniatis, M. Naik, and A. Patti, “Clonecloud: elastic execution between mobile device and cloud,” in EuroSys 2011
+
 [2] Haisheng Tan, Zhenhua Han, Xiang-Yang Li, Francis C.M. Lau, Online job dispatching and scheduling in edge-clouds, IEEE INFOCOM 2017
 Jie Xu, Lixing Chen, Pan Zho, Joint Service Caching and Task Offloading for Mobile Edge Computing in Dense Networks, pp.207–215, IEEE 2018.
+
 [3] Y. Mao, C. You, J. Zhang, K. Huang, and K. B. Letaief, “Mobile edge computing: Survey and research outlook,” arXiv preprint arXiv: 1701.01090, 2017.
+
 [4] W. Shi, J. Cao, Q. Zhang, Y. Li, and L. Xu, “Edge computing: Vision and challenges,” IEEE Internet of Things Journal, vol. 3, no. 5, pp. 637–646, 2016.
+
 [5] Y. Mao, J. Zhang, and K. B. Letaief, “Dynamic computation offloading for mobile-edge computing with energy harvesting devices,” IEEE Journal on Selected Areas in Communications, vol. 34, no. 12, pp. 3590–3605, 2016.
 [6] X. Ge, S. Tu, G. Mao, C.-X. Wang, and T. Han, “5g ultra-dense cellular networks,” IEEE Wireless Communications, vol. 23, no. 1, pp. 72–79, 2016.
+
 [7] Mach, P., & Becvar, Z. (2017). Mobile edge computing: A survey on architecture and computation offloading. IEEE Communications Surveys & Tutorials, 19(3), 1628-1656.
+
 [8] Wang, Shiqiang, et al. "Dynamic service placement for mobile micro-clouds with predicted future costs." IEEE Transactions on Parallel and Distributed Systems 28.4 (2017): 1002-1016.
+
 [9] L. Tong, Y. Li, and W. Gao, “A hierarchical edge cloud architecture for mobile computing,” in INFOCOM 2016.
+
 [10] M. Jia et al., “Optimal cloudlet placement and user to cloudlet allocation in wireless metropolitan area networks,” in INFOCOM 2016.
+
 [11] Haisheng Tan,Zhenhua Han, Xiang-Yang Li, Francis C.M. Lau, Online Job Dispatching and Scheduling inEdge-Clouds at IEEE INFOCOM 2017 - IEEE Conference on Computer Communications
+
 [12] Urgaonkar, Rahul, et al. "Dynamic service migration and workload scheduling in edge-clouds." Performance Evaluation91 (2015): 205-228 
 
