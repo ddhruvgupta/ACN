@@ -1,12 +1,7 @@
-Improved Scheduling for Mobile Edge Networks
-Using On-Disc Algorithm
-Apeksha Hada*, Dhruv Gupta*, Shailesh Kumar Jha* 
-* Department of Computer Science, Georgia State University
-
+# Improved Scheduling for Mobile Edge Networks Using On-Disc Algorithm
  
+### Introduction 
 
- 
-Introduction 
 With the advent of technologies like IoT, 5G and artificial intelligence we need better computing technology for faster processing. The need of the hour has become to not only have bigger pipes for data transfer but also address emerging concerns such as addressing network delays. New network architecture are being proposed to address some of these concerns.
 
 Cloud computing has become the flavor of the season, but with increasing data volumes, latency and congestion has become a mammoth issue which is bottleneck for new innovations on the application layer. One such step in this direction is the onset and division of some computation geared towards the mobile BS (Base Stations) or edge clouds. Edge clouds are resource constrained servers deployed close to the mobile base stations which can perform computation closer to the user instead of routing the request all the way to the remote server. This helps in reducing and helps addressing the issue of congestion in the long run. Edge cloud servers can be reached by nearby mobile users via wireless connections. 
@@ -22,10 +17,11 @@ Mobile Edge Computing (MEC) is like a cloud server which is running at the edge 
 
 Practical Applications of MEC:
 
-	MEC is the key player in implementation of 5G. MEC will reduce the latency for 5G networks.
-	Increased use of live streaming (YouTube, Netflix) on the mobile devices, can lead MEC to reduce the latency.
-	Augmented Reality.
-	Autonomous Vehicles can benefit from the MEC, as low latency is the key to operating autonomous vehicles.
+- MEC is the key player in implementation of 5G. MEC will reduce the latency for 5G networks.
+- Increased use of live streaming (YouTube, Netflix) on the mobile devices, can lead MEC to reduce the latency.
+- Augmented Reality.
+- Autonomous Vehicles can benefit from the MEC, as low latency is the key to operating autonomous vehicles.
+
 Background
 According to ‘Mobile-Edge Computing – Introductory Technical White Paper’, Traffic Offload Function (TOF) is a part of MEC application-platform services, which addresses only problem of prioritizing traffic and routing it.
 
