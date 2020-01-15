@@ -27,54 +27,54 @@ According to ‘Mobile-Edge Computing – Introductory Technical White Paper’,
 
 As evident from Fig 1. The mobile request processing undergoes two questions to answer viz.
 
-	Whether to deploy the request to the remote server or the edge server. This is the ‘dispatching problem’, and
-	How to schedule the new incoming job into the existing job queue once the first question has been answered. This is the ‘scheduling’ problem.
+Whether to deploy the request to the remote server or the edge server. This is the ‘dispatching problem’, and
+How to schedule the new incoming job into the existing job queue once the first question has been answered. This is the ‘scheduling’ problem.
 
 The answers to these two questions are the backbone of mobile edge computing. The first question takes the processing power and the time taken to process the request along with the round-trip time into consideration while the second question need to find a way to deal with the existing requests in the queue once the current request reaches the queue. Practically the following kinds of jobs will be waiting in the queue:
 
-	Jobs with higher priority than the current job in question
-	Jobs with lower priority than the current job
-	Jobs with similar priority when compared with the current job request.
+- Jobs with higher priority than the current job in question
+- Jobs with lower priority than the current job
+- Jobs with similar priority when compared with the current job request.
 
 Our aim is to make sure that every job gets processed with the fair amount of latency and wait time in the queue and it does not have to suffer long wait times since it is a low priority job and there are other high priority jobs currently waiting or are being processed in the queue.
 
- 
-
-Related work
+### Related work
 
 This has been a topic of discussion for a long time and most of the solutions have focused on solving the scheduling problem via First Come First Serve scheme. There have been some studies on dispatching jobs to achieve load balancing but the issue with them is that they have assumed that the way in which the jobs have been released follow some kind of a stochastic process. A stochastic process is a non-deterministic process or a random process like the number of people standing in a queue at a shopping counter.
 CloneCloud [1] was proposed to use cloned virtual machine images in the cloud for mobile job offloading. Tong et al. [10] proposed a hierarchical architecture for the edge-clouds. They divided the edge-clouds into different levels according to the distance to the edge, so that the peak load at the edge-clouds can be offloaded to the higher tier edge-clouds. They also presented a heuristic algorithm to dispatch the workload within this hierarchical architecture. Based on the hierarchical architecture, they designed a heuristic algorithm to dispatch the jobs according to their loads at the edge-clouds. Jia et al. [11] pointed out that the load balancing among the edge-clouds can bring huge performance gain, much more than only processing the jobs at the edge-clouds in isolation. This model is useful in the metropolitan area networks where the edge-cloud servers can communicate with a low latency. Most of the above load balancing schemes in the edge-clouds are based on stochastic optimization, for which they assume that the job release process follows a certain distribution.
+
 They all had shown great improvement, but their underlying assumption was that all the jobs were released at the same time from the mobile device and that there was no communication latency between the mobile device and the server. This does not happen in real life as the job request can be released arbitrarily from the mobile device and in general there is always a lag between the time each request leaves a device and the time it reaches the server.
 This was taken into consideration by Tan et al [12] as they considered jobs in arbitrary order and times and also attached Weighted response Time to the time sensitive jobs.
 In this paper, we try to improve the scheduling approach used by Tan et al [12] and in turn improve the latency result for the various job requests. 
 They have shown great improvement by the usage of their online approach but the low priority jobs in their approach will have to deal with greater waiting times in the queues and this is where our approach takes a lead. We introduce the concept of waited fair queueing for this and document the results in the coming section.
 
-Detailed problem statement
+### Detailed problem statement
 Computation Offloading is one of the major topics of research in Edge/Cloud computing, with various research papers talking about different aspects of job offloading to Edge/Cloud servers.
 
 This paper presents a mathematical model to calculate the computation offloading cost (time and energy consumption) of mobile cloud application models. This paper takes more detailed approach to address the problem of Computation Offloading and breaks it down to two separate issues: dispatching and scheduling problem. The above papers focus more on context-awareness of the jobs being sent by the mobile device. In this paper they consider that the jobs are arbitrary.
 That is why here Latency Sensitivity is considered as deciding factor for scheduling jobs. The algorithm On-Disc is said to be scalable and distributed [1].
 
-Goals:
-	Dispatching the request to a server which has low processing delay (d_proc)
-	Dispatching to an edge cloud vs. remote cloud (d_trans) 
-	Scheduling requests at a server while keeping fairness (d_queue )
-	Service migration of servlets from base station to base station
+### Goals:
+- Dispatching the request to a server which has low processing delay (d_proc)
+- Dispatching to an edge cloud vs. remote cloud (d_trans) 
+- Scheduling requests at a server while keeping fairness (d_queue )
+- Service migration of servlets from base station to base station
+
 In other literature, offline algorithms have been proposed with improved running time [13] which stands in contrast to the online models discussed. 
 
 The two parts of the algorithm:
 
-	Dispatching Policy: According to this policy the jobs are dispatched to the server which brings least increase to Weighted Response Time (WRT), i.e., dispatch the jobs greedily to server with minimum total Weighted Response Time (WRT).
+Dispatching Policy: According to this policy the jobs are dispatched to the server which brings least increase to Weighted Response Time (WRT), i.e., dispatch the jobs greedily to server with minimum total Weighted Response Time (WRT).
 
  
 Figure 2: Shows Type I and Type II jobs and ‘job’ is the job to be dispatched
 
 
 
-Weighted Response Time=
+{Weighted Response Time=
 Time to process packets of higher Priority (Type I jobs) + Time to process job + Time to Process Low Priority jobs (Type II jobs)
 
-	Scheduling Policy: Highest Residual Density First (HRDF) rule is used to schedule all unfinished jobs. In case of tie, job that arrive first has high priority.
+Scheduling Policy: Highest Residual Density First (HRDF) rule is used to schedule all unfinished jobs. In case of tie, job that arrive first has high priority.
 
 Residual density =(weight of the job)/(processing time)
 
