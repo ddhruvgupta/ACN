@@ -22,7 +22,7 @@ Practical Applications of MEC:
 - Augmented Reality.
 - Autonomous Vehicles can benefit from the MEC, as low latency is the key to operating autonomous vehicles.
 
-Background
+### Background
 According to ‘Mobile-Edge Computing – Introductory Technical White Paper’, Traffic Offload Function (TOF) is a part of MEC application-platform services, which addresses only problem of prioritizing traffic and routing it.
 
 As evident from Fig 1. The mobile request processing undergoes two questions to answer viz.
@@ -71,7 +71,7 @@ Figure 2: Shows Type I and Type II jobs and ‘job’ is the job to be dispatche
 
 
 
-{Weighted Response Time=
+Weighted Response Time=
 Time to process packets of higher Priority (Type I jobs) + Time to process job + Time to Process Low Priority jobs (Type II jobs)
 
 Scheduling Policy: Highest Residual Density First (HRDF) rule is used to schedule all unfinished jobs. In case of tie, job that arrive first has high priority.
@@ -81,11 +81,14 @@ Residual density =(weight of the job)/(processing time)
 Jobs take the order in the queue based on their Residual density. If two jobs have same Residual density, the job which arrived first will be processed.
 
 Scheduling Example:
-Job 1:   Weight=4;       d_proc=1   priority=weight/d_proc =4/1=4
-Job 2:   Weight=3;       d_proc=1   priority=weight/d_proc =3/1=3
-Job 3:   Weight=1;       d_proc=1   priority=weight/d_proc =1/1=1
-Job 4:   Weight=1;       d_proc=1   priority=weight/d_proc =1/1=1
-Job 5:   Weight=2;       d_proc=1   priority=weight/d_proc =2/1=2
+
+|   Job    |   Weight   |   d_proc   |   priority=weight/d_proc    |
+| ------------- |:-------------:| -----:| -----:|
+|   1   |  4   |   1   |   4/1 = 4   |
+|   2   |  3   |   1   |   3/1 = 3   |
+|   3   |  1   |   1   |   1/1 = 1   |
+|   4   |  1   |   1   |   1/1 = 1   |
+|   5   |  2   |   1   |   2/1 = 2   |
 
 In this example we have packets coming in with different weight, but the same processing times. The weight represents the priority that was assigned to them by the application. Since their size is the same, the processing delay for each packet is taken to be equal. A higher weight indicates a higher priority.
 The residual density which is used as the priority for job execution in On-Disc is represented as the priority. Assuming that the jobs will not be executed till all of the jobs are in the queue, we assign them a position in queue based on their priority. 
@@ -138,18 +141,20 @@ Figure 8: Processing time for jobs in WFQ implementation
 
 
 Table 1: Job counts in each weight class for simultaneous simulation
-Weights	Job Count
-1	1
-2	5
-3	13
-4	34
-5	94
-6	255
-7	693
-8	1884
-9	5123
-10	11896
-Grand Total	19998
+
+Weights   |	  Job Count
+---|---
+1	   |   1
+2	   |   5
+3	   |   13
+4	   |   34
+5	   |   94
+6	   |   255
+7	   |   693
+8	   |   1884
+9	   |   5123
+10   |   	11896
+Grand Total   |  	 19998
 
 
 
