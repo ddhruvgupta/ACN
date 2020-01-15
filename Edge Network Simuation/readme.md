@@ -121,7 +121,8 @@ If high priority jobs keep coming in the low priority jobs may have to wait infi
 Figure 4: Shows low processing times when the traffic is skewed towards higher priority in ‘On Disc’ Scheduling Algorithm
 
 
-SOLUTION
+### SOLUTION
+
 In order to solve this problem, we suggest implementing ‘Weighted Fair Queue (WFQ)’ at the edge-servers. This can address the infinite waiting time of the low priority jobs.
 
 <img src="images/5.png" /> 
@@ -169,7 +170,7 @@ Grand Total   |  	 19998
 
 
 
-Result Comparision
+### Result Comparision
 
 We were able to replicate ‘On Disc’ scheduling algorithm and compare it with our modification of it, using Weighted Fair Queue (WFQ). We see a lot of improvement in performance when compared to ‘On Disc’ scheduling algorithm.
 
@@ -185,7 +186,7 @@ This improves the waiting times of the jobs in the queue and also improves fairn
 Conclusion
 In ‘On Disc’ paper [2] we studied the online job dispatching and scheduling problem in edge-cloud systems where jobs are released in arbitrary order and times by mobile devices and offloaded to unrelated servers with both upload and download delays. We focus on the scheduling algorithm to suggest an improvement on it. We suggest using ‘Weighted Fair Queue’ at the edge-cloud systems to schedule the jobs in more efficient way. Our simulation shows ‘Weighted Fair Queue’ has a clear performance upgrade over ‘On Disc’ scheduling algorithm. This means adding fairness to the priority driven approach at the edge-cloud servers.
 
-References
+### References
 
 [1] B.-G. Chun, S. Ihm, P. Maniatis, M. Naik, and A. Patti, “Clonecloud: elastic execution between mobile device and cloud,” in EuroSys 2011
 
