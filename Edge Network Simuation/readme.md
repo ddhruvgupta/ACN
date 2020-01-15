@@ -40,7 +40,7 @@ The answers to these two questions are the backbone of mobile edge computing. Th
 
 Our aim is to make sure that every job gets processed with the fair amount of latency and wait time in the queue and it does not have to suffer long wait times since it is a low priority job and there are other high priority jobs currently waiting or are being processed in the queue.
 
-<img src=" images\1.png" \>
+<img src=" images\1.png" />
 Figure 1: Shows a Client Server architecture with Edge/Cloud servers
 
 ### Related work
