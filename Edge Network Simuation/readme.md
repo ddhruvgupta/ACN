@@ -8,7 +8,9 @@ Cloud computing has become the flavor of the season, but with increasing data vo
 
 In this way, mobile devices can offload their tasks to edge clouds and receive the computing results with low network latency. However, because these specially deployed servers are of smaller scale than the remote ones, the resource and computation abilities of edge-clouds are relatively constrained and pose a scalability challenge that we look to explore further in this paper
 In this paper we try to look at a better scheduling model for the Mobile Edge Computing where we try to optimize the queue processing of the processes. Our aim is to mitigate the wait to infinity problem of small priority jobs when they are waiting for other high priority job to be processed and this in discussed in detail in the later sections. 
-MOTIVATION
+
+### MOTIVATION
+
 The creation of network paradigms started with the original client server architecture for request processing. With the advent of internet and a huge surge in computation power aided by exponential increase in mobile devices led to the need of having access to information all around us at all the times. Hence, the processing power was moved to a remote server granting devices access even when they were mobile. This is commonly referred to ‘Cloud Computing’. This was the story 
 
 of about five years ago but with increasing number of mobile users and more resource hungry applications, this doe not seem to be enough and hence we need faster response time. This led to the concept of Mobile Edge Computing or MEC.
@@ -38,6 +40,9 @@ The answers to these two questions are the backbone of mobile edge computing. Th
 
 Our aim is to make sure that every job gets processed with the fair amount of latency and wait time in the queue and it does not have to suffer long wait times since it is a low priority job and there are other high priority jobs currently waiting or are being processed in the queue.
 
+<img src=" images\1.png" \>
+Figure 1: Shows a Client Server architecture with Edge/Cloud servers
+
 ### Related work
 
 This has been a topic of discussion for a long time and most of the solutions have focused on solving the scheduling problem via First Come First Serve scheme. There have been some studies on dispatching jobs to achieve load balancing but the issue with them is that they have assumed that the way in which the jobs have been released follow some kind of a stochastic process. A stochastic process is a non-deterministic process or a random process like the number of people standing in a queue at a shopping counter.
@@ -66,7 +71,7 @@ The two parts of the algorithm:
 
 Dispatching Policy: According to this policy the jobs are dispatched to the server which brings least increase to Weighted Response Time (WRT), i.e., dispatch the jobs greedily to server with minimum total Weighted Response Time (WRT).
 
- 
+<img src=" images\2.png" \> 
 Figure 2: Shows Type I and Type II jobs and ‘job’ is the job to be dispatched
 
 
