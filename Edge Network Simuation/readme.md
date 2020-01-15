@@ -40,7 +40,7 @@ The answers to these two questions are the backbone of mobile edge computing. Th
 
 Our aim is to make sure that every job gets processed with the fair amount of latency and wait time in the queue and it does not have to suffer long wait times since it is a low priority job and there are other high priority jobs currently waiting or are being processed in the queue.
 
-<img src=" images\1.png" />
+<img src="images/1.png" />
 Figure 1: Shows a Client Server architecture with Edge/Cloud servers
 
 ### Related work
@@ -71,7 +71,7 @@ The two parts of the algorithm:
 
 Dispatching Policy: According to this policy the jobs are dispatched to the server which brings least increase to Weighted Response Time (WRT), i.e., dispatch the jobs greedily to server with minimum total Weighted Response Time (WRT).
 
-<img src=" images\2.png" \> 
+<img src="images/2.png" />
 Figure 2: Shows Type I and Type II jobs and ‘job’ is the job to be dispatched
 
 
@@ -113,35 +113,42 @@ This approach to the simulation would add some delay in the packet being queued 
  We found issue with current approach related to the fairness in ‘On Disc’ scheduling algorithm. As per our analysis, we discovered that wait time for low priority jobs, in case of constant incoming packets, will be very high. Though the offline case was explored for the simulation, the results can be easily extended for n→∞.
 
 
- 
+<img src="images/3.png" />
 Figure 3. Shows low priority packets very high processing times in the queue, in ‘On Disc’ Scheduling Algorithm
+
+
 If high priority jobs keep coming in the low priority jobs may have to wait infinitely in the queue.
 
+<img src="images/4.png" />
+Figure 4: Shows low processing times when the traffic is skewed towards higher priority in ‘On Disc’ Scheduling Algorithm
 
 
 SOLUTION
 In order to solve this problem, we suggest implementing ‘Weighted Fair Queue (WFQ)’ at the edge-servers. This can address the infinite waiting time of the low priority jobs.
 
- 
+<img src="images/5.png" /> 
 Figure 5: Illustration of Weighted Fair Queue
+
 The weighted fair queue processes packets from each queue based on the queues’ weight class. As a result in the scenario where queues are deployed for weights 1…10, the WFQ will output 10 jobs from queue 10, 9 job from queue 9 and so on. The queue is responsible for keeping track which weight queue is next in line for dequeuing a packet.  
 As a result the queues with higher weights are able to get lower latency by reduced queuing delay while also ensuring that queues with lower weight are not waiting forever. 
 To simulate the results of the WFQ, another module was added to the previously discussed simulation. The WFQ and PQueue run simultaneously on different threads with the same list of input jobs. The packets in each queue are marked when they are added to the queue by the enqueue function and when they are removed by the dequeue function. The wait time used to represent processing time is the same in both cases and is dependent on the packet size. The time stamps on the packets are studied at the end of the simulation by gathering those from a log file. 
 The results shown here are firstly for the case where there are an equal number of packets in each weight category to provide a fair comparison to the base case presented in Fig. 3. Followed by the comparison of the unbalanced queue which has a higher proportion of high weigh packets to simulate the situation where the users keep sending packets marked with higher weights. 
 
- 
+<img src="images/6.png" /> 
 Figure 6: Processing time with ~2000 packets in each weight class
+
 The graph shows that higher weight packets are still able to get a better latency than lower priority packets while all the packets were able to be processed. 
 
 
- 
+<img src="images/7.png" />
 Figure 7: Packet processing times for On Disc with a skewed input
+
 During simultaneous simulation of both algorithms, the On Disc algorithm similar results similar to the initial data set where the packets in priority 10 received substantially larger delays. The large spike from figure 4 is not seen here due to the lower number of jobs used in this case. Only 20,000 jobs were used in this simulation as opposed to 100,000 for fig. 4.
 
 Under the same conditions the simulation for WFQ is carried out producing the results in Figure 8. The results show that longer latency for priority 10 jobs, however the number of jobs in that weight class is much larger, hence the process implemented is more fair. 
 
 
- 
+<img src="images/8.png" /> 
 Figure 8: Processing time for jobs in WFQ implementation
 
 
@@ -171,7 +178,7 @@ We were able to replicate ‘On Disc’ scheduling algorithm and compare it with
 Having different queues based on the weights of the jobs give low priority jobs to be processed without waiting for infinite times.
 
 
- 
+ <img src="images/9.png" />
 Figure 9: Comparison graph between On Disc and Weighted Fair Queue algorithm
 
 As shown in Fig 9., the processing times for low priority jobs, with weights 2,3 or 4, in On Disc is very high. Whereas, in Weighted Fair Queue (WFQ), the processing times of low priority jobs is fairer. The weight times of the high priority packets is larger due to the fact that the weight class is relatively saturated. The magnitude difference in the running time of the 2 cases can be owed to the reason that WFQ uses the Java Framework version of the queue, whereas the On-Disc implementation required a custom queue to be created. The processing overhead of the custom queue is higher and this difference can be seen. However the takeaway should be the comparison in the shapes of the curves relative to each other. 
