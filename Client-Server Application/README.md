@@ -39,7 +39,7 @@ height="3.0930227471566054in"}
 Figure 2: Graph showing the increase in dropped packets with increase in
 number of packets
 
-![](./media/image_3.png
+![](./media/Image_3.png
 
 3.  **[Max Throughput]
 
