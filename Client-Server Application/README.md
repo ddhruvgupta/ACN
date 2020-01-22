@@ -39,18 +39,18 @@ height="3.0930227471566054in"}
 Figure 2: Graph showing the increase in dropped packets with increase in
 number of packets
 
-[\[CHART\]]{.chart}
+![](./media/image_3.png
 
-3.  **[Max Throughput]{.underline}**
+3.  **[Max Throughput]
 
-  Number of Packets   Number of Dropped Packets   Attempts   Throughput
-  ------------------- --------------------------- ---------- ------------
-  150                 2                           152        148 / 150
-  250                 2                           252        248 / 250
-  450                 4                           454        446 / 450
-  650                 6                           656        644 / 650
-  850                 7                           857        843 / 850
-  1000                8                           1008       992 / 1000
+  Number of Packets  | Number of Dropped Packets  | Attempts  | Throughput
+  -------------------| ---------------------------| ----------| ------------
+  150                | 2                          | 152       | 148 / 150
+  250                | 2                          | 252       | 248 / 250
+  450                | 4                          | 454       | 446 / 450
+  650                | 6                          | 656       | 644 / 650
+  850                | 7                          | 857       | 843 / 850
+  1000               | 8                          | 1008      | 992 / 1000
 
 Table : Packet drop data collected from system implementation
 
