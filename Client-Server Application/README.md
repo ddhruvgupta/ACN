@@ -1,4 +1,4 @@
-1.  **[Design and Protocol]{.underline}**
+1.  **Design and Protocol**
 
 In this project we have implemented three network devices:
 
@@ -26,22 +26,21 @@ constantly listening for a NAK till the connection close request is
 received. The connection to the router is closed when the router
 successfully forwards the message to the receiver.
 
-![](./media/image1.png){width="3.975in" height="3.5318635170603674in"}
+![](./media/image1.png)
 
 Figure 1 Illustration of packet transmission process implementing
 Selective Repeat w/ NAK
 
-2.  **[Plot - Successful Transmissions]{.underline}**
+2.  **Plot - Successful Transmissions**
 
-![](./media/image2.png){width="5.987666229221348in"
-height="3.0930227471566054in"}
+![](./media/image2.png)
 
 Figure 2: Graph showing the increase in dropped packets with increase in
 number of packets
 
 ![](./media/Image_3.png)
 
-3.  **[Max Throughput]
+3.  **Max Throughput**
 
   Number of Packets  | Number of Dropped Packets  | Attempts  | Throughput
   -------------------| ---------------------------| ----------| ------------
@@ -54,7 +53,7 @@ number of packets
 
 Table : Packet drop data collected from system implementation
 
-4.  **[Throughput Discussion]{.underline}**
+4.  **Throughput Discussion**
 
 Throughput is the amount of data that can be transferred between end
 systems. The instantaneous throughput at any instant is the rate at
@@ -86,30 +85,27 @@ packets is used, the queuing delay can be minimized.
 
 5.  **[Output]{.underline}**
 
-![](./media/image3.png){width="4.875in" height="1.8958333333333333in"}
+![](./media/image3.png)
 
 Figure 3: Sender showing the NAKs received from dropped packets when
 sending 150 packets
 
-![](./media/image4.png){width="4.1384853455818025in"
-height="1.348837489063867in"}
+![](./media/image4.png)
 
 Figure 4: Sender receiving NAKs when transmitting 250 packets
 
-![](./media/image5.png){width="4.811510279965004in"
-height="2.1354166666666665in"}
+![](./media/image5.png)
 
 Figure 5: Sender receiving NAKs when transmitting 450 packets
 
-![](./media/image6.png){width="4.5in" height="2.404475065616798in"}
+![](./media/image6.png)
 
 Figure 6: Sender receiving NAKs when transmitting 650 packets
 
-![](./media/image7.png){width="4.980263560804899in"
-height="2.6279068241469816in"}
+![](./media/image7.png)
 
 Figure 7: Sender receiving NAKs when transmitting 850 packets
 
-![](./media/image8.png){width="4.677083333333333in" height="2.59375in"}
+![](./media/image8.png)
 
 Figure 8: Sender receiving NAKs when transmitting 1000 packets
